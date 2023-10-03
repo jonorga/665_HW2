@@ -51,48 +51,62 @@ public class JTest {
 	}
 
 	@Test
-	public void TestDriverData() {
+	public void TestDriverDataTime() {
 		Shop testShop = new Shop("Lou Malnatis");
-
 		Driver testDriver1 = new Driver();
 
 		testShop.registerObserver(testDriver1);
-
 		DeliveryRequest testDR = testShop.generateDeliveryRequest("Darrell", 37.117f, 2.955f, 7.06f);
-
 		testShop.notifyObservers(testDR);
 
 		assertEquals(testDriver1.getDeliverByTime(), 7.06f, 0);
 	}
-	/*
+
 	@Test
-	public void TestCoffee() {
-		Customer testCase = new Customer("Americano", 2, 2);
-		assertEquals(4.0, testCase.PlaceOrder(), 0);
+	public void TestDriverDataRestaurantName() {
+		Shop testShop = new Shop("Sarkis");
+		Driver testDriver1 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Gail", 67.111f, 34.002f, 9.15f);
+		testShop.notifyObservers(testDR);
+
+		assertEquals(testDriver1.getRestaurantName(), "Sarkis");
 	}
 
 	@Test
-	public void TestTea() {
-		Customer testCase = new Customer("Green Tea", 2, 0);
-		assertEquals(3.0, testCase.PlaceOrder(), 0);
-	}
-	
-	@Test
-	public void TestTooManyAddons() {
-		Customer testCase = new Customer("Green Tea", 5, 2);
-		assertEquals(4.5, testCase.PlaceOrder(), 0);
+	public void TestDriverDataOrderName() {
+		Shop testShop = new Shop("Captain Nemos");
+		Driver testDriver1 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Bonnie", 14.160f, 55.345f, 12.55f);
+		testShop.notifyObservers(testDR);
+
+		assertEquals(testDriver1.getOrderName(), "Bonnie");
 	}
 
 	@Test
-	public void TestBadExtrasInput() {
-		Customer testCase = new Customer("Yellow Tea", -1, 2);
-		assertEquals(3.0, testCase.PlaceOrder(), 0);
+	public void TestDriverDataLat() {
+		Shop testShop = new Shop("Santarpios");
+		Driver testDriver1 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Jones", 56.682f, 12.374f, 8.45f);
+		testShop.notifyObservers(testDR);
+
+		assertEquals(testDriver1.getLatCoordinate(), 56.682f, 0);
 	}
 
 	@Test
-	public void TestBadDrinkInput() {
-		Customer testCase = new Customer("Gatorade", 0, 0);
-		assertEquals(0, testCase.PlaceOrder(), 0);
+	public void TestDriverDataLong() {
+		Shop testShop = new Shop("McDonalds");
+		Driver testDriver1 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Stewart", 34.180f, 25.842f, 6.02f);
+		testShop.notifyObservers(testDR);
+
+		assertEquals(testDriver1.getLongCoordinate(), 25.842f, 0);
 	}
-	*/
 }

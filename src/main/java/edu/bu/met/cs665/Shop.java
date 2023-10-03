@@ -9,7 +9,11 @@
 
 package hw2;
 
-public class Shop {
+import java.util.ArrayList;
+
+public class Shop implements IShop {
+    ArrayList<Driver> DriverList = new ArrayList<Driver>();
+
     public void registerObserver()
     {
 
@@ -22,6 +26,6 @@ public class Shop {
 
     public void notifyObserver()
     {
-        
+
     }
 }

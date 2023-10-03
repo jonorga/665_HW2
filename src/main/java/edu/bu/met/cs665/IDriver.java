@@ -10,5 +10,5 @@
 package hw2;
 
 interface IDriver {
-    public void update();
+    public boolean update(DeliveryRequest _dr);
 }

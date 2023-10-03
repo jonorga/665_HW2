@@ -7,12 +7,18 @@ import org.junit.jupiter.api.Test;
 
 import vending_machine.Customer;
 */
+import hw2.*;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class JTest {
-	
+	@Test
+	public void TestShop() {
+		Shop testShop = new Shop();
+		
+	}
 	/*
 	@Test
 	public void TestCoffee() {

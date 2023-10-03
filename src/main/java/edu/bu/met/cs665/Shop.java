@@ -16,17 +16,22 @@ public class Shop implements IShop {
 
     public void registerObserver(Driver driverToAdd)
     {
-
+        DriverList.add(driverToAdd);
     }
 
     public void removeObserver(Driver driverToRemove)
     {
-
+        DriverList.remove(driverToRemove);
     }
 
-    public void notifyObservers()
+    public boolean notifyObservers(DeliveryRequest _dr)
     {
-
+        boolean result = true;
+        for (Driver _driver : DriverList) {
+            if (!_driver.update(_dr))
+                result = false;
+        }
+        return result;
     }
 
     public DeliveryRequest generateDeliveryRequest(String restaurantName, String orderName, float lat_coordinate, 

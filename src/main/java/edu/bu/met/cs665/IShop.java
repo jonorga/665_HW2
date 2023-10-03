@@ -12,5 +12,5 @@ package hw2;
 interface IShop {
 	public void registerObserver(Driver _driver);
 	public void removeObserver(Driver _driver);
-	public void notifyObservers();
+	public boolean notifyObservers(DeliveryRequest _dr);
 }

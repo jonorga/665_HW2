@@ -10,13 +10,20 @@
 package hw2;
 
 public class Driver implements IDriver {
+    DeliveryRequest currentDeliveryRequest;
+
+    public Driver()
+    {
+        currentDeliveryRequest = null;
+    }
+
     /**
      * Update driver app with Delivery Request
      * @return void
      */
-    @Override
-    public void update()
+    public boolean update(DeliveryRequest _dr)
     {
-
+        currentDeliveryRequest = _dr;
+        return true;
     }
 }

@@ -10,5 +10,5 @@
 package hw2;
 
 interface IDriver {
-    public update();
+    public void update();
 }

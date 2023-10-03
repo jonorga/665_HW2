@@ -10,7 +10,7 @@
 package hw2;
 
 interface IShop {
-	public registerObserver();
-	public removeObserver();
-	public notifyObservers();
+	public void registerObserver(Driver _driver);
+	public void removeObserver(Driver _driver);
+	public void notifyObservers();
 }

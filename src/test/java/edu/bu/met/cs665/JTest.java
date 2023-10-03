@@ -29,9 +29,40 @@ public class JTest {
 		testShop.registerObserver(testDriver4);
 		testShop.registerObserver(testDriver5);
 
-		DeliveryRequest testDR = testShop.generateDeliveryRequest("Bob", 24.754f, 12.531f, 2.14f);
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Wayne", 24.754f, 12.531f, 2.14f);
 
 		assertEquals(true, testShop.notifyObservers(testDR));
+	}
+
+	@Test
+	public void TestRemoveObserver() {
+		Shop testShop = new Shop("Dominos");
+
+		Driver testDriver1 = new Driver();
+		Driver testDriver2 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+		testShop.registerObserver(testDriver2);
+		testShop.removeObserver(testDriver1);
+
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Dan", 14.649f, 22.749f, 11.43f);
+
+		assertEquals(true, testShop.notifyObservers(testDR));
+	}
+
+	@Test
+	public void TestDriverData() {
+		Shop testShop = new Shop("Lou Malnatis");
+
+		Driver testDriver1 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Darrell", 37.117f, 2.955f, 7.06f);
+
+		testShop.notifyObservers(testDR);
+
+		assertEquals(testDriver1.getDeliverByTime(), 7.06f, 0);
 	}
 	/*
 	@Test

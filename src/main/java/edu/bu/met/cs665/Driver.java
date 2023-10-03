@@ -10,7 +10,7 @@
 package hw2;
 
 public class Driver implements IDriver {
-    DeliveryRequest currentDeliveryRequest;
+    public DeliveryRequest currentDeliveryRequest;
 
     public Driver()
     {
@@ -26,4 +26,10 @@ public class Driver implements IDriver {
         currentDeliveryRequest = _dr;
         return true;
     }
+
+    public String getRestaurantName() { return currentDeliveryRequest.getRestaurantName(); }
+    public String getOrderName() { return currentDeliveryRequest.getOrderName(); }
+    public float getLatCoordinate() { return currentDeliveryRequest.getLatCoordinate(); }
+    public float getLongCoordinate() { return currentDeliveryRequest.getLongCoordinate(); }
+    public float getDeliverByTime() { return currentDeliveryRequest.getDeliverByTime(); }
 }

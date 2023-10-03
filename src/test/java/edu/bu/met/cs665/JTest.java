@@ -16,8 +16,22 @@ import org.junit.Test;
 public class JTest {
 	@Test
 	public void TestShop() {
-		Shop testShop = new Shop();
-		
+		Shop testShop = new Shop("Chipotle");
+		Driver testDriver1 = new Driver();
+		Driver testDriver2 = new Driver();
+		Driver testDriver3 = new Driver();
+		Driver testDriver4 = new Driver();
+		Driver testDriver5 = new Driver();
+
+		testShop.registerObserver(testDriver1);
+		testShop.registerObserver(testDriver2);
+		testShop.registerObserver(testDriver3);
+		testShop.registerObserver(testDriver4);
+		testShop.registerObserver(testDriver5);
+
+		DeliveryRequest testDR = testShop.generateDeliveryRequest("Bob", 24.754f, 12.531f, 2.14f);
+
+		assertEquals(true, testShop.notifyObservers(testDR));
 	}
 	/*
 	@Test
